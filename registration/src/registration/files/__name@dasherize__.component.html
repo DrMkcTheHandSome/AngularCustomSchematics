@@ -1,0 +1,103 @@
+<div class="full-width" fxLayout="row">
+    <div fxFlex="30" class="left-bg"></div>
+    <div fxFlex>
+        <!--login-->
+        <section class="login-container">
+            <form [formGroup]="registrationForm" novalidate (ngSubmit)="onSubmit()">
+                <div class="mb-33">
+                    <div class="title-text">Registration</div>
+                </div>
+                <div class="">
+                    <div class="row">
+                        <div class="col">
+                            <div class="text-label">Firstname</div>
+                            <mat-form-field class="full-width" appearance="fill">
+                                <input matInput formControlName="firstname" />
+                                <mat-error *ngIf="registrationForm.controls['firstname'].hasError('required')"> Firstname is <strong>required</strong> </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col">
+                            <div class="text-label">Lastname</div>
+                            <mat-form-field class="full-width" appearance="fill">
+                                <input matInput formControlName="lastname" />
+                                <mat-error *ngIf="registrationForm.controls['lastname'].hasError('required')"> Lastname is <strong>required</strong> </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="text-label">Email</div>
+                            <mat-form-field class="full-width" appearance="fill">
+                                <input matInput formControlName="email" />
+                                <mat-error *ngIf="registrationForm.controls['email'].hasError('required')"> Email is <strong>required</strong> </mat-error>
+                                <mat-error *ngIf="registrationForm.controls['email'].hasError('email')">
+                                    Invalid email format
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="full-width">
+                                <div fxLayout="row">
+                                    <div fxFlex class="text-label">Password</div>
+                                    <div class="text-primary fs13 bold">Forgot Password?</div>
+                                </div>
+                            </div>
+                            <mat-form-field class="full-width" appearance="fill">
+                                <input matInput formControlName="password" [type]="!isPasswordVisible ? 'password' : 'text'" />
+                                <img class="form-icon" *ngIf="!isPasswordVisible" (click)="isPasswordVisible = !isPasswordVisible" matSuffix  />
+                                <img class="form-icon" *ngIf="isPasswordVisible" (click)="isPasswordVisible = !isPasswordVisible" matSuffix  />
+                                <mat-error *ngIf="registrationForm.controls['password'].hasError('required')"> Password is <strong>required</strong> </mat-error>
+                                <mat-error *ngIf="registrationForm.controls['password'].hasError('minlength')">
+                                    Password shouldn't be less than {{passwordMinLength}}
+                                </mat-error>
+                                <mat-error *ngIf="registrationForm.controls['password'].hasError('maxlength')">
+                                    Password shouldn't greater than {{passwordMaxLength}}
+                                </mat-error>
+                                <mat-error *ngIf="registrationForm.controls['password'].hasError('password')">
+                                    Password must be alphanumerical characters only.
+                                </mat-error>
+                            </mat-form-field>
+                            <mat-checkbox class="example-margin" (change)="showPassword($event.checked)">Show Password</mat-checkbox>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="text-label">Gender</div>
+                                <mat-radio-group class="full-width" appearance="fill" formControlName="gender">
+                                    <mat-radio-button value="male">Male &nbsp; &nbsp;</mat-radio-button>
+                                    <mat-radio-button value="female">Female</mat-radio-button>
+                                </mat-radio-group>
+                        </div>
+                    </div>
+                       <div class="row">
+                        <div class="col">
+                           <div class="text-label">Birthday</div>
+                            <mat-form-field class="full-width" appearance="fill">
+                                <input matInput [matDatepicker]="picker" formControlName="birthday" />
+                             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                             <mat-datepicker #picker></mat-datepicker>
+                                <mat-error *ngIf="registrationForm.controls['birthday'].hasError('required')"> Birthday is <strong>required</strong> </mat-error>
+                            </mat-form-field>
+                          </div>
+                    </div>
+                
+                </div>
+                <br>
+                <div>
+                    <button mat-button class="btn btn-primary mr-10" type="submit">Sign Up</button>
+                </div>
+            </form>
+        </section>
+        <section class="footer">
+            <div class="fs17">
+                <div fxLayout="row">
+                    <div class="mr-27 text-primary semi-bold">Terms</div>
+                    <div class="mr-27 text-primary semi-bold">Plans</div>
+                    <div class="mr-27 text-primary semi-bold">Contact Us</div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

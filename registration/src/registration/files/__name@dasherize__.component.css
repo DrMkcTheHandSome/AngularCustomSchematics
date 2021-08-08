@@ -1,0 +1,55 @@
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+.full-width {
+  width: 100%;
+  /* height: -webkit-fill-available; */
+}
+
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.col:last-child {
+  margin-right: 0;
+}
+
+/* MELROSE */
+.text-primary {color: #3699FF}
+.text-lightgray { color: #A7A8BB}
+.semi-bold { font-weight: 500;}
+.bold { font-weight: 600;}
+.fs17 { font-size: 17px;}
+.fs13 { font-size: 13px;}
+.login-container {width: 50%;margin: 21.5% auto;}
+.title-text { 
+  font-size: 29px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+.mb-10 { margin-bottom: 10px;}
+.mb-33 { margin-bottom: 33px;}
+.mb-5 { margin-bottom: 5px;}
+.mr-3 { margin-right: 3px;}
+.mr-5 { margin-right: 5px;}
+.mr-10 { margin-right: 10px;}
+.mr-27 { margin-right: 27px;}
+
+.left-bg { background: #040D40}
+.btn-primary {background: #3699FF; color: white;}
+.btn-light-primary {background: #E1F0FF; color: #3699FF;}
+.btn {
+  font-size: 15px !important;
+  padding: 4px 29px;
+}
+.footer {
+  padding: 17px;
+  margin: 0 23%;
+}
+.text-label {color: #636472;margin-bottom: 9px;font-weight: 600;font-size: 13px;}

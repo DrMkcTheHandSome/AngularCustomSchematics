@@ -1,0 +1,29 @@
+{
+    "id": "registrationSchematic",
+    "title": "Material Registration",
+    "type": "object",
+    "properties": {
+        "name":{
+            "type": "string",
+            "description": "The name of the component"
+        },
+        "spec":{
+            "type":"string",
+            "description": "Specifies if a spec file is generatetd",
+            "default": "true"
+        },
+        "path": {
+            "type": "string",
+            "description": "Specifies the path to create the Registration under",
+            "default": ""
+        },
+        "project": {
+          "type": "string",
+          "description": "Specifies the project to run the schematic in",
+          "default": "defaultProject"
+        }
+    },
+    "required": [
+        "name"
+    ]
+}
